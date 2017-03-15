@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shortit | URL Shortener</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Bhavesh">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"><script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	
+<style>
+
+.container-fluid {
+	padding-top: 70px;
+	padding-bottom: 70px;
+}
+
+.bg-1 {
+	background-color: #1abc9c;
+	color: #ffffff;
+}
+
+.margin {
+	margin-top: 60px;
+	margin-bottom:60px;
+}
+
+.buttonclass {
+	margin:15px;
+}
+
+.titleofpage {
+	font-size:60px;
+}
+
+.marginbottom {
+	margin-bottom:180px;
+
+}
+
+.footerclass {
+	background-color:#2f2f2f;
+  		color: #ffffff;
+  		margin:0px;
+}
+
+/*.container {
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	margin-bottom:0;
+}*/
+
+</style>
+</head>
+
+<body>
+
+
+<div class="container-fluid bg-1 text-center">
+	<h3 class="margin titleofpage">Shortit</h3>
+	
+	<form class="form-horizontal" method="post" action="index.html">
+            {% csrf_token %}
+			<div class="form-group">
+				<label class="control-label col-sm-3"></label>
+				<div class="col-sm-6">
+					<input type="URL" name="url" class="form-control" id="URL" placeholder="Let's shorten your URL" >
+				</div>
+			</div>
+			<div class="marginbottom">
+				<button class="btn btn-default buttonclass" >Shorten</button>
+				
+			</div>
+	</form>
+
+</div>
+
+
+<footer class="container-fluid footerclass">
+	<div class="row">
+	<div class="col-sm-4"></div>
+	<div class="text-center col-sm-4">
+		<p>Page created as part of DSA project<br>Page created by <a href="https://github.com/bhaveshpraveen">Bhavesh</a></p>
+	</div>
+		
+	</div>
+</footer>
+</body>
+</html>
