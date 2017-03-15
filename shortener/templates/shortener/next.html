@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,8 +11,16 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"><script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  	
+
 <style>
+
+
+{#.fit {#}
+{#height: auto; /*if more info comes on the page, it will stretch down*/#}
+{#width: 1000px;#}
+{#margin: 0 auto; /*this will cause the div to be in the center*/#}
+{#}#}
+
 
 .container-fluid {
 	padding-top: 70px;
@@ -28,7 +38,8 @@
 }
 
 .buttonclass {
-	margin:15px;
+	margin-bottom: 167px;
+    margin-top: 35px;
 }
 
 .titleofpage {
@@ -52,30 +63,28 @@
 	margin-top:0;
 	margin-bottom:0;
 }*/
+p {
+ font-size:20px;
+    margin:0 0 0 0;
+}
 
 </style>
 </head>
 
-<body>
+<body class="fit">
 
 
-<div class="container-fluid bg-1 text-center">
-	<h3 class="margin titleofpage">Shortit</h3>
+<div class="container-fluid bg-1 text-center ">
+	<h3 class="margin titleofpage ">Shortit</h3>
 
-	<form class="form-horizontal" method="POST" action=".">
-            {% csrf_token %}
-			<div class="form-group">
-				<label class="control-label col-sm-3"></label>
-				<div class="col-sm-6">
-					<input type="URL" name="url" class="form-control" id="URL" placeholder="Let's shorten your URL" >
-				</div>
-			</div>
-			<div class="marginbottom">
-				<button class="btn btn-default buttonclass" >Shorten</button>
-				
-			</div>
-	</form>
+	<div>
+    <p style="margin-bottom:4px;font-size:20px">
+        Your URL has been successfully shortened
+    </p>
+       <p style><a style="color: #0b0c0c" href="{{ obj.get_short_url }}">{{ obj.get_url }}</a></p>
+    </div>
 
+    <button class="btn btn-default buttonclass"><a style="color: #0b0c0c" href="\">Back</a></button>
 
 </div>
 
@@ -84,10 +93,17 @@
 	<div class="row">
 	<div class="col-sm-4"></div>
 	<div class="text-center col-sm-4">
-		<p>Page created as part of DSA project<br>Page created by <a href="https://github.com/bhaveshpraveen">Bhavesh</a></p>
+		<p style="font-size:14px">Page created as part of DSA project<br>Page created by <a href="https://github.com/bhaveshpraveen">Bhavesh</a></p>
 	</div>
-		
+
 	</div>
 </footer>
 </body>
 </html>
+
+
+
+
+
+
+

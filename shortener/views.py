@@ -4,6 +4,8 @@ from django.views import View
 from shortener.utilities.base62 import encode, base_decode
 from django.template import Template, Context, loader
 from .models import shortit
+from .forms import Form
+
 
 
 class homepage(View):
@@ -11,13 +13,12 @@ class homepage(View):
        return render(request, 'shortener/index.html', {})
 
     def post(self, request, *args, **kwargs):
-        print('request', request)
-        print('args {}\n kwargs'.format(args, kwargs))
-        return render(request, 'shortener/index.html', {})
-        #obj, created = shortit.objects.get_or_create(url=link)
-
-
-
+        # print(request.POST) will return the query sets passed from the form
+        url = request.POST.get('url')
+        obj, created = shortit.objects.get_or_create(url=url)
+        print('object:', obj.id, obj.code, obj.notes)
+        return render(request, 'shortener/next.html', {'obj': obj})
+  #
 
 
 class redirect(View):
