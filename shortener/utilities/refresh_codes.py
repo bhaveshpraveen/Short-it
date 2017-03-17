@@ -13,7 +13,7 @@ def random_code_generator():
         code += random.choice(possible_characters)
     return code
 
-
+# delete all fields in the database
 def refresh_codes():
     codes_generated = 0
     objs = shortit.objects.all()
